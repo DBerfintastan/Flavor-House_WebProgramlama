@@ -1,0 +1,93 @@
+﻿@model List<FlavorHouse.Models.Dessert>
+@{
+    ViewData["Title"] = "Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Cake Template">
+    <meta name="keywords" content="Cake, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cake | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <!-- Shop Section Begin -->
+    <section class="shop spad">
+        <div class="container">
+            <div class="shop__option">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7">
+                        <div class="shop__option__search">
+                            <form action="#">
+                                <select>
+                                    <option value="">Categories</option>
+                                    <option value="">Red Velvet</option>
+                                    <option value="">Cup Cake</option>
+                                    <option value="">Biscuit</option>
+                                </select>
+                                <input type="text" placeholder="Search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5">
+                        <div class="shop__option__right">
+                            <select>
+                                <option value="">Default sorting</option>
+                                <option value="">A to Z</option>
+                                <option value="">1 - 8</option>
+                                <option value="">Name</option>
+                            </select>
+                            <a href="#"><i class="fa fa-list"></i></a>
+                            <a href="#"><i class="fa fa-reorder"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                @{
+                    foreach (var item in Model)
+                    {
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg">
+                                    <div>
+                                        <img style="max-width: 100%; height: auto; box-sizing: border-box; display: block; " src="~/User/img/shop/product-1.jpg" />
+                                    </div>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">@item.DessertName</a></h6>
+                                    <div class="product__item__price">@item.Price $</div>
+                                    <div class="cart_add">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+

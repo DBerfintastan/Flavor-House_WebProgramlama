@@ -1,0 +1,22 @@
+﻿@model FlavorHouse.Models.Dessert
+@{
+    ViewData["Title"] = "AddNewDessert";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<form class="form-group" method="post" style="margin-left:100px">
+    @Html.LabelFor(x => x.DessertName)
+    @Html.TextBoxFor(x => x.DessertName, new { @class = "form-control" })
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    @Html.LabelFor(x => x.Picture)
+    @Html.TextBoxFor(x => x.Picture, new { @class = "form-control" })
+    @Html.LabelFor(x => x.CategoryID)
+    @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+    @Html.LabelFor(x => x.CityID)
+    @Html.TextBoxFor(x => x.CityID, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Add</button>
+</form>
+

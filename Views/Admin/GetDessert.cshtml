@@ -1,0 +1,22 @@
+﻿@model FlavorHouse.Models.Dessert
+
+@{
+    ViewData["Title"] = "GetDessert";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("UpdateDessert", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.DessertName)
+    @Html.TextBoxFor(x => x.DessertName, new { @class = "form-control" })
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    @Html.LabelFor(x => x.CategoryID)
+    @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+    @Html.LabelFor(x => x.CityID)
+    @Html.TextBoxFor(x => x.CityID, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Update</button>
+
+}
+

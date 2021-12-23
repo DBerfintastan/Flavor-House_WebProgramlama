@@ -1,0 +1,35 @@
+﻿@using FlavorHouse.Models
+@model List<Dessert>
+
+@{
+    ViewData["Title"] = "Desserts";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table table-bordered" style="margin-left:100px">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>City</th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.DessertID</td>
+            <td>@i.DessertName</td>
+            <td>@i.Price</td>
+            <td>@i.CategoryID</td>
+            <td>@i.CityID</td>
+            <td>
+                <a href="/Admin/DeleteDessert/@i.DessertID" class="btn btn-danger">Delete</a>
+                <a href="/Admin/GetDessert/@i.DessertID" class="btn btn-success">Update</a>
+            </td>
+        </tr>
+    }
+
+
+</table>
+
+<a href="/Admin/AddNewDessert" class="btn btn-social" style="position:absolute;right:100px">Add</a>
