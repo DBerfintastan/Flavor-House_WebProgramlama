@@ -1,21 +1,23 @@
 ﻿using FlavorHouse.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace FlavorHouse.Controllers
 {
-    public class HomeController : Controller
+    
+    public class CartController : Controller
     {
+      
+        [Authorize]
         public IActionResult Index()
         {
             return View();
         }
+
+    
     }
 }
