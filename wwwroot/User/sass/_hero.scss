@@ -1,0 +1,36 @@
+/*---------------------
+  Hero
+-----------------------*/
+.hero__item {
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.hero__slider {
+
+    &.owl-carousel {
+
+        .owl-item {
+
+            &.active {
+                
+                .hero__text {
+                    
+                    h2 {
+                        top: 0;
+                        opacity: 1;
+                    }
+
+                    .primary-btn {
+                        top: 0;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        
+    }
+}
