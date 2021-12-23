@@ -78,7 +78,12 @@
                             <li><a asp-controller="Shop" asp-action="Index">@lang["Shop"]</a></li>
                             <li><a asp-controller="Cart" asp-action="Index">@lang["Cart"]</a></li>
                             <li><a asp-controller="Contact" asp-action="Index">@lang["Contact"]</a></li>
-                            <li><a asp-controller="Admin" asp-action="Index">@lang["Admin"]</a></li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    <a asp-area="Admin" asp-controller="Admin" asp-action="Index">@lang["Admin"]</a>
+                                </li>
+                            }
                             <li><a asp-area="" asp-controller="Home" asp-action="Index" asp-route-culture="tr-TR">Turkish</a></li>
                             <li><a asp-area="" asp-controller="Home" asp-action="Index" asp-route-culture="en-US">English</a></li>
                         </ul>

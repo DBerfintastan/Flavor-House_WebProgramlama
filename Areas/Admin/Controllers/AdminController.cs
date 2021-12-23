@@ -7,8 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FlavorHouse.Controllers
+namespace FlavorHouse.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
              private readonly ApplicationDbContext _context;
@@ -16,8 +18,6 @@ namespace FlavorHouse.Controllers
              {
                  _context = context;
              }
-
-            [Authorize]
             public IActionResult Index()
             {
                 return View();

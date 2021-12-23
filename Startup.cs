@@ -22,6 +22,7 @@ namespace FlavorHouse
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,10 +33,12 @@ namespace FlavorHouse
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
             services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddDefaultTokenProviders()
-                .AddDefaultUI()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+               .AddDefaultTokenProviders()
+               .AddDefaultUI()
+               .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddRazorPages();
 
@@ -43,14 +46,16 @@ namespace FlavorHouse
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
+
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
-            services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-
+            services.AddScoped<IDbInitializer, DbInitializer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -63,20 +68,23 @@ namespace FlavorHouse
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            //********************************* multiple language
+
             var supportedCultures = new[]
 {
                 new CultureInfo("tr-TR"),
-                new CultureInfo("en-US")
+                new CultureInfo("en-Us")
 
             };
 
             app.UseRequestLocalization(new RequestLocalizationOptions
             {
-                DefaultRequestCulture = new RequestCulture("en-US"),
+                DefaultRequestCulture = new RequestCulture("tr-TR"),
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures
             });
+
+
+            dbInitializer.Initialize();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -88,11 +96,11 @@ namespace FlavorHouse
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+                endpoints.MapControllerRoute("areas", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
 }
+
