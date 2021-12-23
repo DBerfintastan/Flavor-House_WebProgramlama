@@ -33,9 +33,9 @@ namespace FlavorHouse
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentity<IdentityUser, IdentityRole>()
-               .AddDefaultTokenProviders()
-               .AddDefaultUI()
-               .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddDefaultTokenProviders()
+                .AddDefaultUI()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddRazorPages();
 
