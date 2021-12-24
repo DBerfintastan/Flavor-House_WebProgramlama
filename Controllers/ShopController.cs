@@ -22,5 +22,15 @@ namespace FlavorHouse.Controllers
             var data = _context.desserts.OrderByDescending(x => x.DessertName).Take(_context.desserts.Count()).ToList();
             return View(data);
         }
+
+        public IActionResult GetCart(int id)
+        {
+            var des = _context.desserts.Find(id);
+            string TempName = des.DessertName;
+            Cart cart = new Cart();
+            cart.dessert.DessertName = TempName;
+            _context.SaveChanges();
+            return View("GetDessert", des);
+        }
     }
 }
