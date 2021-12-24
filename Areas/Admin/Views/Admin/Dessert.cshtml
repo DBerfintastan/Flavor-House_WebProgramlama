@@ -23,7 +23,7 @@
             <td>@i.CategoryID</td>
             <td>@i.CityID</td>
             <td>
-                <a href="/Admin/DeleteDessert/@i.DessertID" class="btn btn-danger">Delete</a>
+                <a href="/DeleteDessert/@i.DessertID" class="btn btn-danger">Delete</a>
                 <a href="/Admin/GetDessert/@i.DessertID" class="btn btn-success">Update</a>
             </td>
         </tr>
@@ -32,4 +32,4 @@
 
 </table>
 
-<a href="/Admin/AddNewDessert" class="btn btn-social" style="position:absolute;right:100px">Add</a>
+<a asp-area="Admin" asp-controller="Admin" asp-action="AddNewDessert" class="btn btn-social" style="position:absolute;right:100px">Add</a>
