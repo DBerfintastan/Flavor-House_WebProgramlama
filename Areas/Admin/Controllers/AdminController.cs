@@ -13,63 +13,63 @@ namespace FlavorHouse.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
-             private readonly ApplicationDbContext _context;
-             public AdminController(ApplicationDbContext context)
-             {
-                 _context = context;
-             }
-            public IActionResult Index()
-            {
-                return View();
-            }
+        private readonly ApplicationDbContext _context;
+        public AdminController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-            
-            public IActionResult Desserts()
-            {
-                var d = _context.desserts.ToList<Dessert>();
-                return View(d);
-            }
+        public IActionResult Dessert()
+        {
+            var d = _context.desserts.ToList<Dessert>();
+            return View(d);
+        }
 
-            [HttpGet]
-            public IActionResult AddNewDessert()
-            {
-                return View();
-            }
 
-            [HttpPost]
-            public IActionResult AddNewDessert(Dessert dessert)
-            {
-                _context.desserts.Add(dessert);
-                _context.SaveChanges();
+        [HttpGet]
+        public IActionResult AddNewDessert()
+        {
+            return View();
+        }
 
-                return RedirectToAction("Desserts");
-            }
+        [HttpPost]
+        public IActionResult AddNewDessert(Dessert dessert)
+        {
+            _context.desserts.Add(dessert);
+            _context.SaveChanges();
 
-            public IActionResult DeleteDessert(int id)
-            {
-                var dep = _context.desserts.Find(id);
-                _context.desserts.Remove(dep);
-                _context.SaveChanges();
-                return RedirectToAction("Desserts");
-            }
+            return RedirectToAction("Desserts");
+        }
 
-            public IActionResult GetDessert(int id)
-            {
-                var des = _context.desserts.Find(id);
-                return View("GetDessert", des);
+        public IActionResult DeleteDessert(int id)
+        {
+            var dep = _context.desserts.Find(id);
+            _context.desserts.Remove(dep);
+            _context.SaveChanges();
+            return RedirectToAction("Desserts");
+        }
 
-            }
-            public IActionResult UpdateDessert(Dessert dessert)
-            {
-                var des = _context.desserts.Find(dessert.DessertID);
-                des.DessertName = dessert.DessertName;
-                des.Price = dessert.Price;
-                des.Picture = dessert.Picture;
-                des.CategoryID = dessert.CategoryID;
-                des.CityID = dessert.CityID;
-                _context.SaveChanges();
-                return RedirectToAction("Desserts");
-            }
+        public IActionResult GetDessert(int id)
+        {
+            var des = _context.desserts.Find(id);
+            return View("GetDessert", des);
+
+        }
+        public IActionResult UpdateDessert(Dessert dessert)
+        {
+            var des = _context.desserts.Find(dessert.DessertID);
+            des.DessertName = dessert.DessertName;
+            des.Price = dessert.Price;
+            des.Picture = dessert.Picture;
+            des.CategoryID = dessert.CategoryID;
+            des.CityID = dessert.CityID;
+            _context.SaveChanges();
+            return RedirectToAction("Desserts");
+        }
     }
 
 }
