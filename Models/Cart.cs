@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,21 +10,26 @@ namespace FlavorHouse.Models
     {
         public int CartId { get; set; }
 
-
-        public string DessertName { get; set; }
+        public int? DessertID { get; set; }
+        [ForeignKey("DessertID")]
         public Dessert dessert { get; set; }
 
-
-        public string Address { get; set; }
-        public ApplicationUser applicationUser { get; set; }
-
-
         public string UserName { get; set; }
-        public ApplicationUser applicationUser1 { get; set; }
+        [ForeignKey("UserName")]
+        public ApplicationUser ApplicationUser { get; set; }
 
+        public double Quantity { get; set; }
 
-        public int Price { get; set; }
-        public Dessert dessert1 { get; set; }
+        public double Price { get; set; }
+
+        [NotMapped]
+        public double Total
+        {
+            get
+            {
+                return Quantity * Price;
+            }
+        }
 
     }
 }
