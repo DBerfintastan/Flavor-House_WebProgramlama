@@ -49,7 +49,14 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg">
                                     <div>
-                                        <img style="max-width: 100%; height: auto; box-sizing: border-box; display: block; " src="~/User/img/shop/product-1.jpg" />
+                                        @if (item.Picture != "NULL")
+                                        {
+                                            <img style="width: 270px; height: 270px; box-sizing: border-box; display: block; " src="@item.Picture" />
+                                        }
+                                        else
+                                        {
+                                            <img style="max-width: 270px; height: 270px; box-sizing: border-box; display: block; " src="~/User/img/shop/noImage.jpg" />
+                                        }
                                     </div>
                                 </div>
                                 <div class="product__item__text">
