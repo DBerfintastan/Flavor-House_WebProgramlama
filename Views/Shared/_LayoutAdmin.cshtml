@@ -22,55 +22,50 @@
 </head>
 
 <body class="">
-    
-        <div class="sidebar" data-color="blue" data-active-color="danger">
-            
-            <div class="sidebar-wrapper">
-                <ul class="nav">
-                    <li>
-                        <a asp-area="Admin" asp-controller="Cart" asp-action="Index">
-                            <i class='fas fa-donate' style='font-size:24px'></i>
-                            <p>Carts</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a asp-controller="Admin" asp-action="Users">
-                            <i class='far fa-user-circle' style='font-size:24px'></i>
-                            <p>Users</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a asp-area="Admin" asp-controller="Admin" asp-action="Dessert">
-                            <i class='fas fa-cookie-bite' style='font-size:24px'></i>
-                            <p>Desserts</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a asp-controller="Admin" asp-action="Message">
-                            <i class='far fa-comment' style='font-size:24px'></i>
-                            <p>Messages</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a asp-controller="Home" asp-action="Index">
-                            <i class='fas fa-power-off' style='font-size:24px'></i>
-                            <p>Log Out</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+
+    <div class="sidebar" data-color="blue" data-active-color="danger">
+
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+
+                <li>
+                    <a asp-controller="Admin" asp-action="Users">
+                        <i class='far fa-user-circle' style='font-size:24px'></i>
+                        <p>Users</p>
+                    </a>
+                </li>
+                <li>
+                    <a asp-area="Admin" asp-controller="Admin" asp-action="Dessert">
+                        <i class='fas fa-cookie-bite' style='font-size:24px'></i>
+                        <p>Desserts</p>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Admin" asp-action="Message">
+                        <i class='far fa-comment' style='font-size:24px'></i>
+                        <p>Messages</p>
+                    </a>
+                </li>
+                <li>
+                    <a asp-area="Home" asp-controller="Home" asp-action="Index">
+                        <i class='fas fa-power-off' style='font-size:24px'></i>
+                        <p>Log Out</p>
+                    </a>
+                </li>
+            </ul>
         </div>
-   
-   
-        <main role="main">
-            <div class="container">
-                @RenderBody()
-            </div>
-        </main>
-    
-    
-    
-    
+    </div>
+
+
+    <main role="main">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+
+
+
+
 </body>
 
 

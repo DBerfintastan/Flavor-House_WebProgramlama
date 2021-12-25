@@ -1,0 +1,30 @@
+﻿@using FlavorHouse.Models
+@model List<ApplicationUser>
+
+@{
+    ViewData["Title"] = "Users";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+
+
+<table class="table table-bordered" style="margin-left:100px">
+
+    <tr>
+        <th>User Name</th>
+        <th>Name</th>
+        <th>Surname</th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.UserName.</td>
+            <td>@i.Name</td>
+            <td>@i.Surname</td>
+        </tr>
+    }
+
+
+</table>
