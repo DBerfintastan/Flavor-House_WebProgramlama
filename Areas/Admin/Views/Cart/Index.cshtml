@@ -1,0 +1,27 @@
+﻿@using FlavorHouse.Models
+@model List<Cart>
+
+@{
+    ViewData["Title"] = "Carts";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table table-bordered" style="margin-left:100px">
+    <tr>
+        <th>Id</th>
+        <th>Dessert</th>
+        <th>Price</th>
+        <th>UserName</th>
+        <th>Quantity</th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.CartId</td>
+            <td>@i.dessert</td>
+            <td>@i.UserName</td>
+            <td>@i.Price</td>
+            <td>@i.Quantity</td>
+        </tr>
+    }
+</table>
