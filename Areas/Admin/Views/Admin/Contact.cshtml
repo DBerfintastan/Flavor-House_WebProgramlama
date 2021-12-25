@@ -1,0 +1,25 @@
+﻿@using FlavorHouse.Models
+@model List<Contact>
+
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table table-bordered" style="margin-left:100px">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.ContactId</td>
+            <td>@i.Name</td>
+            <td>@i.Email</td>
+            <td>@i.Message</td>
+        </tr>
+    }
