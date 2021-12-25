@@ -17,6 +17,7 @@ namespace FlavorHouse.Data
         public DbSet<Dessert> desserts { get; set; }
         public DbSet<Category> categories { get; set; }
         public DbSet<City> cities { get; set; }
+        public DbSet<Contact> contacts { get; set; }
 
     }
 }

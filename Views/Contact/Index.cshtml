@@ -1,4 +1,4 @@
-﻿
+﻿@model FlavorHouse.Models.Contact
 @{
     ViewData["Title"] = "Contact";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -124,24 +124,18 @@
                         <img src="/User/img/cake-piece.png" alt="">
                     </div>
                 </div>
-                <div class="col-lg-8">
-                    <div class="contact__form">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <input type="text" placeholder="Name">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="text" placeholder="Email">
-                                </div>
-                                <div class="col-lg-12">
-                                    <textarea placeholder="Message"></textarea>
-                                    <button type="submit" class="site-btn">Send Us</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                <form class="form-group" method="post" style="margin-left:100px">
+                    @Html.LabelFor(x => x.Name)
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    @Html.LabelFor(x => x.Email)
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                    @Html.LabelFor(x => x.Message)
+                    @Html.TextBoxFor(x => x.Message, new { @class = "form-control" })
+                   
+                    <br />
+                    <button href="~/Admin/Admin/Dessert" class="btn btn-info">Add</button>
+                </form>
+
             </div>
         </div>
     </section>

@@ -23,6 +23,14 @@ namespace FlavorHouse.Areas.Admin.Controllers
             return View();
         }
 
+        public IActionResult Contact()
+        {
+            var d = _context.contacts.ToList<Contact>();
+            return View(d);
+        }
+
+
+
         public IActionResult Users()
         {
             var d = _context.ApplicationUser.ToList<ApplicationUser>();
