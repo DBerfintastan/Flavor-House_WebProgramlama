@@ -53,7 +53,7 @@ namespace FlavorHouse.Areas.Admin.Controllers
             return RedirectToAction("Desserts");
         }
 
-        public IActionResult GetDessert(int id)
+        public IActionResult GetDessert(int id) // for updata page
         {
             var des = _context.desserts.Find(id);
             return View("GetDessert", des);
