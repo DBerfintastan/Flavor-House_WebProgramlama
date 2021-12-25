@@ -23,6 +23,13 @@ namespace FlavorHouse.Areas.Admin.Controllers
             return View();
         }
 
+        public IActionResult Users()
+        {
+            var d = _context.ApplicationUser.ToList<ApplicationUser>();
+            return View(d);
+        }
+
+
         public IActionResult Dessert()
         {
             var d = _context.desserts.ToList<Dessert>();
@@ -42,7 +49,7 @@ namespace FlavorHouse.Areas.Admin.Controllers
             _context.desserts.Add(dessert);
             _context.SaveChanges();
 
-            return RedirectToAction("Desserts");
+            return RedirectToAction("Dessert");
         }
 
         public IActionResult DeleteDessert(int id)
@@ -50,7 +57,7 @@ namespace FlavorHouse.Areas.Admin.Controllers
             var dep = _context.desserts.Find(id);
             _context.desserts.Remove(dep);
             _context.SaveChanges();
-            return RedirectToAction("Desserts");
+            return RedirectToAction("Dessert");
         }
 
         public IActionResult GetDessert(int id) // for updata page
@@ -68,7 +75,7 @@ namespace FlavorHouse.Areas.Admin.Controllers
             des.CategoryID = dessert.CategoryID;
             des.CityID = dessert.CityID;
             _context.SaveChanges();
-            return RedirectToAction("Desserts");
+            return RedirectToAction("Dessert");
         }
     }
 

@@ -23,13 +23,13 @@
             <td>@i.CategoryID</td>
             <td>@i.CityID</td>
             <td>
-                <a href="/DeleteDessert/@i.DessertID" class="btn btn-danger">Delete</a>
-                <a href="/Admin/GetDessert/@i.DessertID" class="btn btn-success">Update</a>
+                <a href="~/Admin/Admin/DeleteDessert/@i.DessertID" class="btn btn-danger">Delete</a>
+                <a href="~/Admin/Admin/GetDessert/@i.DessertID" class="btn btn-success">Update</a>
             </td>
         </tr>
     }
-
+    
 
 </table>
 
-<a asp-area="Admin" asp-controller="Admin" asp-action="AddNewDessert" class="btn btn-social" style="position:absolute;right:100px">Add</a>
+<a href="~/Admin/Admin/AddNewDessert" class="btn btn-social" style="position:absolute;right:100px">Add</a>
