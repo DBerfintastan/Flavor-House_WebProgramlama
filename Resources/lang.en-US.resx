@@ -117,19 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutCake" xml:space="preserve">
+    <value>ABOUT CAKE SHOP</value>
+  </data>
   <data name="Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
-  <data name="Cart" xml:space="preserve">
-    <value>Cart</value>
+  <data name="Bio" xml:space="preserve">
+    <value>The "Flavor House" is a Turkish Brand that started as a small family business. The owners are Deniz Taştan and Melih Tüfekcioğlu supported by a staff of 80 employees.</value>
+  </data>
+  <data name="CakeDesign" xml:space="preserve">
+    <value>Cake Design</value>
+  </data>
+  <data name="CakeFlavor" xml:space="preserve">
+    <value>Cakes from the house of flavor</value>
+  </data>
+  <data name="CakeRecipes" xml:space="preserve">
+    <value>Cake Recipes</value>
+  </data>
+  <data name="Center" xml:space="preserve">
+    <value>Central patisserie</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
   </data>
+  <data name="CustomerHappiness" xml:space="preserve">
+    <value>Customer Happiness</value>
+  </data>
+  <data name="Gurments" xml:space="preserve">
+    <value>What gourmets say?</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="Instagram" xml:space="preserve">
+    <value>FOLLOW US ON INSTAGRAM</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Moments" xml:space="preserve">
+    <value>Sweet moments are saved as memories</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="SevimGok" xml:space="preserve">
+    <value>A successful bakery. I advise.</value>
+  </data>
   <data name="Shop" xml:space="preserve">
     <value>Shop</value>
+  </data>
+  <data name="Testimonial" xml:space="preserve">
+    <value>Testimonial</value>
+  </data>
+  <data name="VedatMilor" xml:space="preserve">
+    <value>This name, which is famous for its patisseries in many locations in Turkey, makes progress by constantly improving itself in taste.</value>
   </data>
 </root>

@@ -38,7 +38,7 @@
                                 @if (SignInManager.IsSignedIn(User))
                                 {
                                     <div class="header__top__right__auth">
-                                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style="color:darkorange">Hello @User.Identity.Name!</a>
+                                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style="color:darkorange; text-decoration-color:darkorange">Hello @User.Identity.Name!</a>
                                     </div>
                                     <div class="header__top__right__auth">
                                         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
@@ -49,10 +49,10 @@
                                 else
                                 {
                                     <div class="header__top__right__auth">
-                                        <a asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-bell" style="color:darkorange"></i> Register</a>
+                                        <a asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-bell" style="color:darkorange"></i> @lang["Register"]</a>
                                     </div>
                                     <div class="header__top__right__auth">
-                                        <a asp-area="Identity" asp-page="/Account/Login"><i class="fa fa-user" style="color:darkorange"></i> Login</a>
+                                        <a asp-area="Identity" asp-page="/Account/Login"><i class="fa fa-user" style="color:darkorange"></i> @lang["Login"]</a>
                                     </div>
                                 }
                             </div>
@@ -75,8 +75,7 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li><a asp-controller="Home" asp-action="Index">@lang["Home"]</a></li>
-                            <li><a asp-controller="Shop" asp-action="Index">@lang["Shop"]</a></li>
-                            <li><a asp-controller="Cart" asp-action="Index">@lang["Cart"]</a></li>
+                            <li><a asp-controller="Shop" asp-action="Index">Menu</a></li>
                             <li><a asp-controller="Contact" asp-action="Index">@lang["Contact"]</a></li>
                             @if (User.IsInRole("Admin"))
                             {

@@ -20,7 +20,7 @@ namespace FlavorHouse.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            var d = _context.carts.ToList<Cart>();
+            
             return View();
         }
     }

@@ -117,19 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutCake" xml:space="preserve">
+    <value>Bizim Hakkımızda</value>
+  </data>
   <data name="Admin" xml:space="preserve">
     <value>Yönetici</value>
   </data>
-  <data name="Cart" xml:space="preserve">
-    <value>Sepet</value>
+  <data name="Bio" xml:space="preserve">
+    <value>"Flavor House" küçük bir aile işletmesi olarak yola çıkan bir Türk markasıdır. Sahipleri Deniz Taştan ve Melih Tüfekcioğlu'dur ve 80 kişilik bir kadro tarafından desteklenmektedir.</value>
+  </data>
+  <data name="CakeDesign" xml:space="preserve">
+    <value>Tatlı Dizaynı</value>
+  </data>
+  <data name="CakeFlavor" xml:space="preserve">
+    <value>Lezzet evinden pastalar</value>
+  </data>
+  <data name="CakeRecipes" xml:space="preserve">
+    <value>Tatlı Tarifleri</value>
+  </data>
+  <data name="Center" xml:space="preserve">
+    <value>Merkez Pastanemiz</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>İletişim</value>
   </data>
+  <data name="CustomerHappiness" xml:space="preserve">
+    <value>Müşteri Memnuniyeti</value>
+  </data>
+  <data name="Gurments" xml:space="preserve">
+    <value>Gurmeler ne diyor?</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Anasayfa</value>
   </data>
+  <data name="Instagram" xml:space="preserve">
+    <value>Instagram</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+  <data name="Moments" xml:space="preserve">
+    <value>Tatlı anlar hatıra olarak kaydedilir.</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Üye Ol</value>
+  </data>
+  <data name="SevimGok" xml:space="preserve">
+    <value>Başarılı bir mekan. Tavsiye Ederim.</value>
+  </data>
   <data name="Shop" xml:space="preserve">
     <value>Mağaza</value>
+  </data>
+  <data name="Testimonial" xml:space="preserve">
+    <value>Referans</value>
+  </data>
+  <data name="VedatMilor" xml:space="preserve">
+    <value>Türkiye'nin birçok lokasyonundaki pastaneleri ile meşhur olan bu isim lezzet konusunda kendini sürekli geliştirerek ilerleme sağlıyor.</value>
   </data>
 </root>

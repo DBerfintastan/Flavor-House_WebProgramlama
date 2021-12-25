@@ -1,5 +1,8 @@
-﻿@{ ViewData["Title"] = "Home Page"; }
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.Extensions.Localization
 
+@{ ViewData["Title"] = "Home Page"; }
+@inject IStringLocalizer<lang> lang
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -88,33 +91,32 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="about__text">
                         <div class="section-title">
-                            <span>About Cake shop</span>
-                            <h2>Cakes and bakes from the house of Queens!</h2>
+                            <span>@lang["AboutCake"]</span>
+                            <h2>@lang["CakeFlavor"]</h2>
                         </div>
                         <p>
-                            The "Cake Shop" is a Jordanian Brand that started as a small family business. The owners are
-                            Dr. Iyad Sultan and Dr. Sereen Sharabati, supported by a staff of 80 employees.
+                            @lang["Bio"]
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="about__bar">
                         <div class="about__bar__item">
-                            <p>Cake design</p>
+                            <p>@lang["CakeDesign"]</p>
                             <div id="bar1" class="barfiller">
                                 <div class="tipWrap"><span class="tip"></span></div>
                                 <span class="fill" data-percentage="95"></span>
                             </div>
                         </div>
                         <div class="about__bar__item">
-                            <p>Cake Class</p>
+                            <p>@lang["CustomerHappiness"]</p>
                             <div id="bar2" class="barfiller">
                                 <div class="tipWrap"><span class="tip"></span></div>
                                 <span class="fill" data-percentage="80"></span>
                             </div>
                         </div>
                         <div class="about__bar__item">
-                            <p>Cake Recipes</p>
+                            <p>@lang["CakeRecipes"]</p>
                             <div id="bar3" class="barfiller">
                                 <div class="tipWrap"><span class="tip"></span></div>
                                 <span class="fill" data-percentage="90"></span>
@@ -132,8 +134,8 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="section-title">
-                        <span>Testimonial</span>
-                        <h2>Our client say</h2>
+                        <span>@lang["Testimonial"]</span>
+                        <h2>@lang["Gurments"]</h2>
                     </div>
                 </div>
             </div>
@@ -143,11 +145,11 @@
                         <div class="testimonial__item">
                             <div class="testimonial__author">
                                 <div class="testimonial__author__pic">
-                                    <img src="~/User/img/testimonial/ta-1.jpg" alt="">
+                                    <img src="~/User/img/testimonial/vedatMilor.jpg" alt="">
                                 </div>
                                 <div class="testimonial__author__text">
-                                    <h5>Kerry D.Silva</h5>
-                                    <span>New york</span>
+                                    <h5>Vedat Milor</h5>
+                                    <span>Istanbul</span>
                                 </div>
                             </div>
                             <div class="rating">
@@ -158,128 +160,32 @@
                                 <span class="icon_star-half_alt"></span>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua viverra lacus vel facilisis.
+                                @lang["VedatMilor"]
                             </p>
                         </div>
                     </div>
+
                     <div class="col-lg-6">
                         <div class="testimonial__item">
                             <div class="testimonial__author">
                                 <div class="testimonial__author__pic">
-                                    <img src="~/User/img/testimonial/ta-2.jpg" alt="">
+                                    <img src="~/User/img/testimonial/SevimGok.jpg" alt="">
                                 </div>
                                 <div class="testimonial__author__text">
-                                    <h5>Kerry D.Silva</h5>
-                                    <span>New york</span>
+                                    <h5>Sevim Gökyıldız</h5>
+                                    <span>Ankara</span>
                                 </div>
                             </div>
                             <div class="rating">
                                 <span class="icon_star"></span>
                                 <span class="icon_star"></span>
                                 <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star-half_alt"></span>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua viverra lacus vel facilisis.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__pic">
-                                    <img src="~/User/img/testimonial/ta-1.jpg" alt="">
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Ophelia Nunez</h5>
-                                    <span>London</span>
-                                </div>
-                            </div>
-                            <div class="rating">
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star-half_alt"></span>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua viverra lacus vel facilisis.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__pic">
-                                    <img src="~/User/img/testimonial/ta-2.jpg" alt="">
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Kerry D.Silva</h5>
-                                    <span>New york</span>
-                                </div>
-                            </div>
-                            <div class="rating">
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star-half_alt"></span>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua viverra lacus vel facilisis.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__pic">
-                                    <img src="~/User/img/testimonial/ta-1.jpg" alt="">
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Ophelia Nunez</h5>
-                                    <span>London</span>
-                                </div>
-                            </div>
-                            <div class="rating">
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star-half_alt"></span>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua viverra lacus vel facilisis.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="testimonial__item">
-                            <div class="testimonial__author">
-                                <div class="testimonial__author__pic">
-                                    <img src="~/User/img/testimonial/ta-2.jpg" alt="">
-                                </div>
-                                <div class="testimonial__author__text">
-                                    <h5>Kerry D.Silva</h5>
-                                    <span>New york</span>
-                                </div>
-                            </div>
-                            <div class="rating">
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star"></span>
-                                <span class="icon_star-half_alt"></span>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua viverra lacus vel facilisis.
+                                @lang["SevimGok"]
+                                <br />
+                                <br />
+                                <br />
                             </p>
                         </div>
                     </div>
@@ -295,8 +201,8 @@
                 <div class="col-lg-4 p-0">
                     <div class="instagram__text">
                         <div class="section-title">
-                            <span>Follow us on instagram</span>
-                            <h2>Sweet moments are saved as memories.</h2>
+                            <span>@lang["Instagram"]</span>
+                            <h2>@lang["Moments"]</h2>
                         </div>
                         <h5><i class="fa fa-instagram"></i> </h5>
                     </div>
@@ -345,11 +251,11 @@
             <div class="row">
                 <div class="col-lg-4 col-md-7">
                     <div class="map__inner">
-                        <h6>COlorado</h6>
+                        <h6>@lang["Center"]</h6>
                         <ul>
-                            <li>1000 Lakepoint Dr, Frisco, CO 80443, USA</li>
-                            <li>Sweetcake@support.com</li>
-                            <li>+1 800-786-1000</li>
+                            <li>Karaköy Mahallesi 180.Sokak No:13</li>
+                            <li>FlavorHouse@support.com</li>
+                            <li>+905012345678</li>
                         </ul>
                     </div>
                 </div>
