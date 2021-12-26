@@ -4,5 +4,5 @@
   Web sitesinin çok dilli olması için localization kütüphanesi kullanıldı.
   
   
-  Deniz Berfin Taştan  b181210010   1.Öğretim A grubu
+  Deniz Berfin Taştan  b181210010   1.Öğretim A grubu /
   Melih Tüfekcioğlu    b191210004   1.Öğretim A grubu
