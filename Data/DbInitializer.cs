@@ -50,7 +50,17 @@ namespace FlavorHouse.Data
                 PhoneNumber = "123456789"
             }, "Admin123*").GetAwaiter().GetResult();
 
+            _userManager.CreateAsync(new ApplicationUser
+            {
+                UserName = "b191210004@sakarya.edu.tr",
+                Email = "b191210004@sakarya.edu.tr",
+                EmailConfirmed = true,
+                Name = "Melih",
+                PhoneNumber = "123456789"
+            }, "Admin123*").GetAwaiter().GetResult();
+
             _userManager.AddToRoleAsync(_db.Users.FirstOrDefaultAsync(u => u.Email == "b181210010@sakarya.edu.tr").GetAwaiter().GetResult(), "Admin").GetAwaiter().GetResult();
+            _userManager.AddToRoleAsync(_db.Users.FirstOrDefaultAsync(u => u.Email == "b191210004@sakarya.edu.tr").GetAwaiter().GetResult(), "Admin").GetAwaiter().GetResult();
 
 
         }
